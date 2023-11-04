@@ -12,3 +12,23 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+.square {
+  background-color: transparent;
+  border: 3px solid rgb(46, 82, 173);
+}
+
+.inner-square {
+  background-color: lightgrey;
+}
+
+.board {
+  display: flex;
+  flex-direction: row;
+  border: 3px solid rgb(46, 82, 173)
+}
+
+.board-column {
+  display: flex;
+  flex-direction: column;
+}
