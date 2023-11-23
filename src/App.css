@@ -32,3 +32,11 @@
   display: flex;
   flex-direction: column;
 }
+
+@keyframes fade {
+  from {
+    background-color: lightblue;
+  } to {
+    background-color: lightgrey;
+  }
+}
