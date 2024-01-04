@@ -22,11 +22,14 @@ export default function Board({ size, getState }) {
   const getFunc = (func) => { // getting the stuffs from each square (the state/set state)
     let nextArr = [...state.objArr]; // get existing objArr
     if (nextArr.length < dims[0] * dims[1]) {
-      nextArr.push(func); // push it to the nextObjArr
-      setState(() => ({
-        ...state,
-        objArr: nextArr
-      }))
+      nextArr.push(func); // push it to the nextArr
+      // var newState = state.objArr = nextArr;
+      // setState(newState);
+      // setState({
+      //   ...state,
+      //   objArr: nextArr
+      // })
+      console.log(state);
     } else {
       console.log('e');
     }

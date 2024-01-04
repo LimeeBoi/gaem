@@ -13,6 +13,8 @@ export default function Square({ size, getState, id }) {
         return state;
       } else if (request === 'setState') {
         return setState;
+      } else {
+        console.log('no (square)');
       }
     }
   }); // send an function with state and setState to Board component (a waiter)
