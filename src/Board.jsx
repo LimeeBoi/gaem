@@ -7,33 +7,43 @@
 
 import { useState } from 'react';
 import Square from './Square';
-export default function Board({ size, getState }) {
+export default function Board({ size, giveState }) {
   const [state, setState] = useState({
     objArr: [], // array of arrays of an (object and a function)
   });
 
-  // getState(state);
+  // giveState(state);
   
-  const dims = (size === 's' ? [12, 7] : (size === 'm' ? [18, 10] : (size === 'b' ? [36, 20] : console.warn('wot on square size'))));
+  const dims = (
+    size === 's' ? [12, 7]: size === 'm' ? [18, 10]: (
+      size === 'b' ? [36, 20]: 
+        console.warn('wot on square size')
+    )
+  );
+
   // dimensions, [x, y]
-  const squareSize = (size === 's' ? 'b' : (size === 'm' ? 'm' : (size === 'b' ? 's' : console.warn('wot on square size conver'))));
+  const squareSize = (
+    size === 's' ? 'b': (
+      size === 'm' ? 'm': (
+        size === 'b' ? 's': 
+        console.warn('wot on square size conver')
+      )
+    )
+  );
   // *SIZE OF THE SQUARE*
   
   const getFunc = (func) => { // getting the stuffs from each square (the state/set state)
-    let nextArr = [...state.objArr]; // get existing objArr
-    if (nextArr.length < dims[0] * dims[1]) {
-      nextArr.push(func); // push it to the nextArr
-      // var newState = state.objArr = nextArr;
-      // setState(newState);
-      // setState({
-      //   ...state,
-      //   objArr: nextArr
-      // })
-      console.log(state);
-    } else {
-      console.log('e');
-    }
-    
+    const nextArr = [...state.objArr]; // get existing objArr
+    // if (nextArr.length <= dims[0] * dims[1]) {
+    //   nextArr.push(func); // push it to the nextArr
+    //   setState({ // sync nextArr with objArr
+    //     ...state,
+    //     objArr: nextArr
+    //   })
+    //   console.log('state:', state);
+    // } else {
+    //   func('e');
+    // }
   }
 
   let xArr = []; // a column of squares array
@@ -56,11 +66,11 @@ export default function Board({ size, getState }) {
               size={squareSize}
               key={id} 
               id={`${ids.id} ${id}`} 
-              getState={getFunc}
+              giveState={getFunc}
             />
           )}
         </div>
       )}
     </div>
-  )
+  );
 }

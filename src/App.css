@@ -22,15 +22,49 @@
   background-color: lightgrey;
 }
 
-.board {
-  display: flex;
-  flex-direction: row;
-  border: 3px solid rgb(46, 82, 173)
-}
-
 .board-column {
   display: flex;
   flex-direction: column;
+}
+
+.board {
+  display: flex;
+  flex-direction: row;
+  border: 3px solid rgb(46, 82, 173);
+}
+
+input {
+  background-color: lightblue;
+  border: 5px solid rgb(60, 118, 136);
+}
+
+.form-list {
+  background-color: rgb(6, 6, 20);
+  border: 10px solid rgb(24, 24, 88);
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+
+.form {
+  top: 50%;
+  color: lightblue;
+  margin: 30px;
+  padding: 20px;
+  border: 5px solid rgb(24, 24, 88);
+}
+
+.form-submit {
+  color: lightblue;
+  background-color: black;
+  margin: 30px;
+  padding: 20px;
+  border: 5px solid rgb(24, 24, 88);
+  font-weight: bolder;
+  font-size: xx-large;
 }
 
 @keyframes fade {
