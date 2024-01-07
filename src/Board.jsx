@@ -15,18 +15,24 @@ export default function Board({ size, giveState }) {
   // giveState(state);
   
   const dims = (
-    size === 's' ? [12, 7]: size === 'm' ? [18, 10]: (
-      size === 'b' ? [36, 20]: 
-        console.warn('wot on square size')
+    size === 's' ? [13, 7]: (
+      size === 'm' ? [17, 9]: (
+        size === 'b' ? [36, 19]: (
+          size === 'o' ? [62, 34]:
+          console.warn('wot on square size')
+        )
+      )
     )
   );
 
   // dimensions, [x, y]
   const squareSize = (
-    size === 's' ? 'b': (
-      size === 'm' ? 'm': (
-        size === 'b' ? 's': 
-        console.warn('wot on square size conver')
+    size === 's' ? 'o': (
+      size === 'm' ? 'b': (
+        size === 'b' ? 'm': (
+          size === 'o' ? 's':
+          console.warn('wot on square size converter')
+        )
       )
     )
   );

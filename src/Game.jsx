@@ -1,5 +1,5 @@
 import Board from './Board';
-import Form from './Form';
+import Slider from './Slider';
 import { useState } from 'react';
 export default function Game() {
   const [state, setState] = useState({
@@ -12,27 +12,11 @@ export default function Game() {
     });
   }
 
-  const handler = (randomName, val) => {
-    let size;
-    switch (val) {
-      case 'small':
-        size = 's';
-        break;
-      case 'medium':
-        size = 'm';
-        break;
-      case 'big':
-        size = 'b';
-        break;
-      default:
-        size = 's';
-      break;
-    }
+  const handler = (val) => {
     setState({
-      ...state, 
-      size: size
+      ...state,
+      size: val
     }); 
-    console.log(val)
   }
   
   // window.addEventListener('keydown', e => { 
@@ -46,17 +30,17 @@ export default function Game() {
   //     isSpaceDown = false;
   //   }
   // });
-  console.log('gaem:', state.size)
+
   return (
     <div className="game">
       <Board 
         size={state.size} 
         giveState={getState}
       />
-      <Form
+      <Slider
         handler={handler}
-        inputIds={['size']}
-        labels={['Size']}
+        inputIds={['s', 'm', 'b', 'o']}
+        labels={[ 'Small', 'Medium', 'Big', 'Obese']}
       />
     </div>
   );

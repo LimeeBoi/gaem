@@ -38,7 +38,7 @@ input {
   border: 5px solid rgb(60, 118, 136);
 }
 
-.form-list {
+.option-list {
   background-color: rgb(6, 6, 20);
   border: 10px solid rgb(24, 24, 88);
   display: flex;
@@ -49,25 +49,34 @@ input {
   left: 50%;
 }
 
-.form {
+.option {
   top: 50%;
   color: lightblue;
   margin: 30px;
   padding: 20px;
   border: 5px solid rgb(24, 24, 88);
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 600;
 }
 
-.form-submit {
-  color: lightblue;
-  background-color: black;
-  margin: 30px;
-  padding: 20px;
-  border: 5px solid rgb(24, 24, 88);
-  font-weight: bolder;
-  font-size: xx-large;
+.slider {
+  position: absolute;
+  top: 50%;
+  transform: translate(0%, -50%);
+  height: 11.5vmin;
+  width: 15vmin;
+  border: 7px solid rgb(176, 196, 222);
 }
 
-@keyframes fade {
+@keyframes fade-in {
+  from {
+    background-color: lightgrey;
+  } to {
+    background-color: lightblue;
+  }
+}
+
+@keyframes fade-out {
   from {
     background-color: lightblue;
   } to {
